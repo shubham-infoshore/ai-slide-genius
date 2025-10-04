@@ -1,0 +1,131 @@
+/* styles.css */
+:root {
+    --bg-color: #f7f5f0; /* Muted off-white/beige */
+    --text-color-dark: #333;
+    --text-color-light: #888;
+    --gold-color: #c9ac75; /* A close gold approximation */
+    --font-serif: "Times New Roman", Times, serif; /* For STATUS title */
+    --font-sans: Arial, sans-serif; /* For body text and numbers */
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-sans);
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    padding: 50px;
+}
+
+/* --- Header Section (Left Side) --- */
+.header-section {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.gold-accent {
+    /* Simple CSS shape approximation for the gold swoosh */
+    width: 60px;
+    height: 40px;
+    background-color: var(--gold-color);
+    clip-path: ellipse(50% 50% at 50% 50%); 
+    transform: rotate(-15deg) translateX(30px) translateY(10px);
+    margin-bottom: -20px;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 4em;
+    font-weight: 400; /* Lighter weight */
+    letter-spacing: 0.1em;
+    margin: 0.2em 0;
+}
+
+.description {
+    color: var(--text-color-light);
+    font-size: 0.9em;
+    line-height: 1.5;
+    width: 75%;
+}
+
+/* --- Cards Section (Right Side) --- */
+.cards-section {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.image-wrapper {
+    width: 220px; /* Adjust size as needed */
+    height: 350px; /* Adjust size as needed */
+    margin-bottom: 20px;
+    /* Create the oval mask using a clip-path */
+    clip-path: ellipse(50% 50% at 50% 50%);
+    overflow: hidden;
+}
+
+.image-oval {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    /* Add a filter for the black and white effect */
+    filter: grayscale(100%); 
+    /* The design seems to use a slight warming/sepia tone */
+    /* filter: grayscale(100%) sepia(20%); */ 
+}
+
+/* Specific vertical alignment fixes for the images */
+/* Card 2 (feet) needs to be shifted up */
+#img2 {
+    object-position: 50% 20%; 
+}
+/* Card 3 (woman w/ flower) needs a slightly different vertical crop */
+#img3 {
+    object-position: 50% 30%;
+}
+
+
+.data {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 0.8em;
+    color: var(--text-color-light);
+}
+
+#generatePptx {
+    padding: 10px 20px;
+    margin-top: 30px;
+    background-color: var(--gold-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
